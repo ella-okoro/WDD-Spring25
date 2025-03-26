@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 - Product Filters</title>
+    <link rel="stylesheet" href="p3.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+        <nav class="main-nav">
+            <button class="hamburger">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="#" class="nav-link">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="product-container">
+        <aside class="filters">
+            <section class="filter-section">
+                <h2>Animal</h2>
+                <form>
+                    <label><input type="checkbox" name="animal" value="bear"> Bear</label>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+            
+
+            <section class="filter-section">
+                <h2>Size</h2>
+                <form>
+                    <label><input type="checkbox" name="size" value="small"> Small</label>
+                    <label><input type="checkbox" name="size" value="large"> Large</label>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+        </aside>
+
+        <section class="products">
+            <div class="product-grid">
+
+                <div class="product-card" data-size="large" data-animal="bear">
+                    <img src="../p3/img/polar.jpg" alt="Polar Bear" class="product-image">
+                    <h3>Polar Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+                <div class="product-card" data-size="small" data-animal="bear">
+                    <img src="../p3/img/panda.jpg" alt="Panda Bear" class="product-image">
+                    <h3>Panda Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+                <div class="product-card" data-size="large" data-animal="bear">
+                    <img src="../p3/img/brown.jpg" alt="Brown Bear" class="product-image">
+                    <h3>Brown Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+                <div class="product-card" data-size="large" data-animal="bear">
+                    <img src="../p3/img/grizzly.jpg" alt="Grizzly Bear" class="product-image">
+                    <h3>Grizzly Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+                <div class="product-card" data-size="large" data-animal="bear">
+                    <img src="../p3/img/black.jpg" alt="Black Bear" class="product-image">
+                    <h3>Black Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+                <div class="product-card" data-size="small" data-animal="bear">
+                    <img src="../p3/img/sun.jpg" alt="Sun Bear" class="product-image">
+                    <h3>Sun Bear</h3>
+                    <p class="price">$500</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We provide the best bears at the most competitive prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@bearshop.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ella Okoro Homework Assignment 3 Fictional Bear Shop. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const checkboxes = document.querySelectorAll(".filters input[type='checkbox']");
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", filterProducts);
+            });
+        
+            function filterProducts() {
+                const selectedSizes = Array.from(document.querySelectorAll(".filters input[name='size']:checked"))
+                                          .map(input => input.value);
+        
+                const selectedAnimals = Array.from(document.querySelectorAll(".filters input[name='animal']:checked"))
+                                          .map(input => input.value);
+        
+                document.querySelectorAll(".product-card").forEach(card => {
+                    const productSize = card.getAttribute("data-size");
+                    const productAnimal = card.getAttribute("data-animal");
+        
+                    const sizeMatch = selectedSizes.length === 0 || selectedSizes.includes(productSize);
+                    const animalMatch = selectedAnimals.length === 0 || selectedAnimals.includes(productAnimal);
+        
+                    if (sizeMatch && animalMatch) {
+                        card.style.display = "flex"; // Show if it matches filters
+                    } else {
+                        card.style.display = "none"; // Hide if it doesn’t match
+                    }
+                });
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+
+            hamburger.addEventListener("click", () => {
+                navMenu.classList.toggle("show");
+            });
+        });
+
+        </script>
+        
+        
+
+</body>
+</html>
