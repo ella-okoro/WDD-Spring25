@@ -92,44 +92,39 @@ h2::after {
     color: #333;
 }
 
-
-
-
-
-/* Add labels to images in the flex container */
 .flex-item {
-    position: relative; /* Required for positioning the label */
+    position: relative;  
 }
 
 .flex-item::after {
-    content: attr(data-label); /* Use the data-label attribute for the label text */
+    content: attr(data-label);   
     position: absolute;
-    bottom: 10px; /* Position the label at the bottom */
-    left: 50%; /* Center the label horizontally */
-    transform: translateX(-50%); /* Center the label horizontally */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white; /* Text color */
-    padding: 5px 10px; /* Padding for the label */
-    font-size: 14px; /* Font size */
-    border-radius: 5px; /* Rounded corners */
-    white-space: nowrap; /* Prevent label from wrapping */
+    bottom: 10px;  
+    left: 50%;  
+    transform: translateX(-50%); 
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;  
+    padding: 5px 10px;  
+    font-size: 14px;  
+    border-radius: 5px; 
+    white-space: nowrap; 
 }
 
-/* Add labels to images in the grid container */
+
 .grid-item {
-    position: relative; /* Required for positioning the label */
+    position: relative; 
 }
 
 .grid-item::after {
-    content: attr(data-label); /* Use the data-label attribute for the label text */
+    content: attr(data-label);  
     position: absolute;
-    bottom: 10px; /* Position the label at the bottom */
-    left: 50%; /* Center the label horizontally */
-    transform: translateX(-50%); /* Center the label horizontally */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white; /* Text color */
-    padding: 5px 10px; /* Padding for the label */
-    font-size: 14px; /* Font size */
-    border-radius: 5px; /* Rounded corners */
-    white-space: nowrap; /* Prevent label from wrapping */
+    bottom: 10px;  
+    left: 50%;  
+    transform: translateX(-50%);  
+    background-color: rgba(0, 0, 0, 0.7);  
+    color: white;  
+    padding: 5px 10px; 
+    font-size: 14px; 
+    border-radius: 5px; 
+    white-space: nowrap; 
 }
