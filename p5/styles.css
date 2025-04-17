@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --main-bg: #cad1b9;
+  --card-bg: #dfe8c5;
+  --primary-color: #4b6e3c;
+  --text-color: #2a3c24;
+  --accent-color: #94a77f;
+}
+
+body.dark {
+  --main-bg: #192c17;
+  --card-bg: #223e22;
+  --primary-color: #78d25b;
+  --text-color: #c7f5c4;
+  --accent-color: #2d4b2b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  background: var(--main-bg) url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  color: var(--text-color);
+  padding: 20px;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.header, .footer {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 8px rgba(43, 71, 37, 0.2);
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 8px #a6ff9f, 0 0 16px #a6ff9f;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid #2a3c24;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Press Start 2P', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 0 #2a3c24;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.btn:hover {
+  background-color: #6c9e53;
+  transform: scale(1.05);
+}
+
+.center {
+  text-align: center;
+}
+
+.quote {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  font-style: italic;
+}
+
+.trainer-tip {
+  background-color: #fff9c4;
+  color: #333;
+  border-left: 6px solid #fbc02d;
+}
+
+body.dark .trainer-tip {
+  background-color: #4e4300;
+  color: #fff7cc;
+  border-left-color: #ffe082;
+}
+
+.icon-row {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.snorlax-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+#loading-screen {
+    font-family: 'Press Start 2P', monospace;
+    background-color: black;
+    color: #8bc34a;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  .pokedex {
+    background-color: var(--card-bg);
+    border: 2px dashed var(--primary-color);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+  

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn About Snorlax</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/188/188987.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Retro GameBoy Loading Screen -->
+  <div id="loading-screen">
+    <h1>Game Boy</h1>
+    <p>▶ Press Start</p>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="../p5/audio/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <header class="header" id="main-header" style="display:none;">
+    <h1>Snorlax - The Sleepy Pokémon</h1>
+    <p>Welcome to your guide on everyone's favorite nap-loving giant!</p>
+    <label class="dark-toggle">
+      <input type="checkbox" id="darkModeToggle"> 🌙 Dark Mode
+    </label>
+  </header>
+
+  <main class="main-content" id="main-content" style="display:none;">
+    <div class="trainer-tip card">
+      <h3>Trainer Tip 💡</h3>
+      <p>Snorlax might be lazy, but it's got sky-high HP and can tank hits like a champ! Don't underestimate it in battle.</p>
+    </div>
+
+    <div class="icon-row">
+      <img src="https://cdn-icons-png.flaticon.com/512/188/188987.png" alt="Poké Ball" width="40">
+      <img src="https://cdn-icons-png.flaticon.com/512/188/188987.png" alt="Poké Ball" width="40">
+      <img src="https://cdn-icons-png.flaticon.com/512/188/188987.png" alt="Poké Ball" width="40">
+    </div>
+
+    <!-- Pokédex-style Snorlax Card -->
+    <section class="card pokedex">
+      <h2>Pokédex Entry</h2>
+      <p><strong>Name:</strong> Snorlax</p>
+      <p><strong>Type:</strong> Normal</p>
+      <p><strong>Height:</strong> 6'11" (2.11m)</p>
+      <p><strong>Weight:</strong> 1014.1 lbs (460 kg)</p>
+      <p><strong>Ability:</strong> Immunity / Thick Fat</p>
+      <p><strong>Description:</strong> Snorlax is a Normal-type Pokémon introduced in Generation I. It is known for its huge size, massive appetite, and of course... sleeping everywhere!</p>
+    </section>
+
+    <section class="card">
+      <h2>Fun Facts</h2>
+      <ul>
+        <li><strong>Pokédex #:</strong> 143</li>
+        <li>Sleeps 20 hours a day!</li>
+        <li>Evolves from Munchlax with high friendship.</li>
+        <li>Can block paths until woken with a Poké Flute!</li>
+      </ul>
+    </section>
+
+    <section class="card center">
+      <button class="btn" onclick="toggleSnorlax()">Show/Hide Snorlax</button>
+      <div id="snorlax-image" class="snorlax-img" style="display: none;">
+        <img src="../p5/snorlax.gif" alt="Snorlax GameBoy Sprite" />
+      </div>
+    </section>
+
+    <blockquote class="card quote">
+      <p>“Zzz... Snorlax is sleeping soundly...”</p>
+    </blockquote>
+
+    <section class="card">
+      <h2>Snorlax Quiz</h2>
+      <p>What item do you need to wake up a sleeping Snorlax in Pokémon Red/Blue?</p>
+      <select id="quiz">
+        <option value="">Choose an answer</option>
+        <option value="pokeflute">Poké Flute</option>
+        <option value="rare-candy">Rare Candy</option>
+        <option value="poke-ball">Poké Ball</option>
+      </select>
+      <button class="btn" onclick="checkQuiz()">Submit</button>
+      <p id="quiz-result"></p>
+    </section>
+
+    <div class="center">
+      <button class="btn" onclick="playMusic()">Play Music 🎵</button>
+      <button class="btn" onclick="stopMusic()">Stop Music 🛑</button>
+    </div>
+  </main>
+
+  <footer class="footer" id="main-footer" style="display:none;">
+    <p>&copy; 2025 Pokémon Learning Site</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
